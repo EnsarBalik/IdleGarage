@@ -8,9 +8,10 @@ public class CostumerStateManager : MonoBehaviour
 {
     public static CostumerStateManager instance;
 
-    public CostumerBaseState currentState;
+    public CostumerBaseState CurrentState;
     public readonly CostumerMoveTaskPosState MoveTaskPosState = new CostumerMoveTaskPosState();
-    public readonly CostumerTaskDoneState _taskDoneState = new CostumerTaskDoneState();
+    public readonly CostumerTaskDoneState TaskDoneState = new CostumerTaskDoneState();
+    public readonly CostumerReturnAreaState ReturnAreaState = new CostumerReturnAreaState();
 
     public NavMeshAgent _navMeshAgent;
 
@@ -32,47 +33,37 @@ public class CostumerStateManager : MonoBehaviour
 
         _navMeshAgent = GetComponent<NavMeshAgent>();
 
-        currentState = MoveTaskPosState;
-        currentState.EnterState(this);
+        CurrentState = MoveTaskPosState;
+        CurrentState.EnterState(this);
     }
 
     private void Update()
     {
-        currentState.UpdateState(this);
-
-        // if (taskLocations.occupied)
-        // {
-        //     if (!isWalkDone)
-        //     {
-        //         _navMeshAgent.destination = movePositionTransform.position;
-        //         animatorController.SetBool("Walking", true);
-        //     }
-        //     else
-        //     {
-        //         animatorController.SetBool("Walking", false);
-        //         transform.rotation = movePositionTransform.rotation;
-        //         BuyProduct();
-        //     }
-        // }
+        CurrentState.UpdateState(this);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        currentState.EnterState(this);
         if (other.gameObject.CompareTag("CollectArea1"))
         {
-            isWalkDone = true;
-            product = other.gameObject.transform.GetChild(1).transform.GetChild(1).transform;
+            CurrentState.TriggerEnter(this, other);
+        }
+
+        if (other.gameObject.CompareTag("Costumer Area"))
+        {
+            SwitchState(MoveTaskPosState);
         }
     }
 
-    private void BuyProduct()
+    // ReSharper disable Unity.PerformanceAnalysis
+    public void BuyProduct()
     {
         if (!_isCoolDown)
         {
             _isCoolDown = true;
-            product.gameObject.SetActive(false);
-            TaskIsDone();
+            taskLocations.occupied = false;
+            SwitchState(ReturnAreaState);
+            Destroy(product.gameObject);
         }
 
         if (_isCoolDown)
@@ -86,12 +77,7 @@ public class CostumerStateManager : MonoBehaviour
         }
     }
 
-    void AssignTask()
-    {
-        _navMeshAgent.destination = movePositionTransform.position;
-    }
-
-    private void TaskIsDone()
+    public void TaskIsDone()
     {
         _navMeshAgent.destination = costumerArea.position;
         isWalkDone = false;
@@ -100,7 +86,7 @@ public class CostumerStateManager : MonoBehaviour
 
     public void SwitchState(CostumerBaseState state)
     {
-        currentState = state;
+        CurrentState = state;
         state.EnterState(this);
     }
 }

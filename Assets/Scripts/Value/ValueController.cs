@@ -24,7 +24,7 @@ public class ValueController : MonoBehaviour
         other.GetComponent<Value>().ID = value;
         value++;
         Vector3 newPos = valuableList[index].transform.position;
-        newPos.y += 1.3f;
+        newPos.y += 0.8f;
         newPos.z = valuableList[0].transform.position.z;
         newPos.x = valuableList[0].transform.position.x;
         //other.transform.DOJump(newPos, 0.1f, 0, 0.35f);

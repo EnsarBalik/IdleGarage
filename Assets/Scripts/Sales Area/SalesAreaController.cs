@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class SalesAreaController : MonoBehaviour
 {
     public static SalesAreaController instance;
-    
+
     public BuySalesArea BuySalesArea;
 
     public Transform place;
@@ -30,6 +30,7 @@ public class SalesAreaController : MonoBehaviour
             valuableList[^1].transform.DOJump(place.position, 0.5f, 0, 0.5f);
             valuableList[^1].transform.parent = transform;
             valuableList[^1].transform.rotation = quaternion.identity;
+            valuableList[^1].transform.GetChild(0).GetComponent<ParticleSystem>().Play();
             valuableList.Remove(valuableList[^1]);
             occupied = true;
         }

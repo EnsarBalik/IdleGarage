@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class CostumerStateManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class CostumerStateManager : MonoBehaviour
     public NavMeshAgent _navMeshAgent;
 
     public Animator animatorController;
+
+    public List<GameObject> sellProducts;
 
     [SerializeField] public Transform movePositionTransform;
     public Transform product;
@@ -62,6 +65,7 @@ public class CostumerStateManager : MonoBehaviour
         {
             _isCoolDown = true;
             taskLocations.occupied = false;
+            GameManager.instance.CollectCoin(Random.Range(100, 200));
             SwitchState(ReturnAreaState);
             Destroy(product.gameObject);
         }

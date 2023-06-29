@@ -38,10 +38,13 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("myCoin", coin);
     }
 
-    private void CollectCoin(int coinCollect)
+    public void CollectCoin(int coinCollect)
     {
         coin += coinCollect;
         StartCoroutine(_coinText());
+        coinText.gameObject.transform.DOShakeScale(0.5f, 0.3f)
+            .OnComplete(() => coinText.gameObject.transform.localScale = new Vector3(1, 1, 1));
+        coinText.DOColor(Color.green, 0.2f).OnComplete(() => coinText.DOColor(Color.white, 0.2f));
         PlayerPrefs.SetInt("myCoin", coin);
     }
 

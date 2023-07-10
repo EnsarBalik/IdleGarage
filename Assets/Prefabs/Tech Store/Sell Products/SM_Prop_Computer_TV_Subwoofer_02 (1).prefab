@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7235399389706874230}
   - component: {fileID: 7210564501850175580}
   - component: {fileID: 7219876721450782236}
-  - component: {fileID: 7243475254848633998}
   m_Layer: 0
   m_Name: SM_Prop_Computer_TV_Subwoofer_02 (1)
   m_TagString: Untagged
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7243475254848633998
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7234285482229714952}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43949712770174118, guid: 9388bbde993015b448d564b166f5dc37, type: 2}

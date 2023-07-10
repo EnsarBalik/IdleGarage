@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3794963335349947271}
   - component: {fileID: 3806588433347120941}
   - component: {fileID: 3814689541461113219}
-  - component: {fileID: 3765017376229044227}
   m_Layer: 0
   m_Name: SM_Prop_Computer_TV_Wall_01 (2)
   m_TagString: Untagged
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3765017376229044227
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3792055460114053507}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43004629721077996, guid: 3a3a3475a3678b64f9e1c5c8156e9069, type: 2}

@@ -2162,6 +2162,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6644829062922040378, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644829062922040378, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644829062922040378, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644829062922040378, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644829062922040378, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644829062922040378, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644829062922040378, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9057619779821775616, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
         type: 3}
       propertyPath: fillImage
@@ -7019,16 +7054,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SellArea (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8398256605019789359, guid: efee6fc98b3bfc54a803ec926d042e50,
-        type: 3}
-      propertyPath: id
-      value: SellArea1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8398256605019789359, guid: efee6fc98b3bfc54a803ec926d042e50,
-        type: 3}
-      propertyPath: fillImage
-      value: 
-      objectReference: {fileID: 972463640}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efee6fc98b3bfc54a803ec926d042e50, type: 3}
 --- !u!1 &1499802293
@@ -7693,11 +7718,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SellArea
       objectReference: {fileID: 0}
-    - target: {fileID: 8398256605019789359, guid: efee6fc98b3bfc54a803ec926d042e50,
-        type: 3}
-      propertyPath: fillImage
-      value: 
-      objectReference: {fileID: 972463640}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efee6fc98b3bfc54a803ec926d042e50, type: 3}
 --- !u!4 &1693579853 stripped

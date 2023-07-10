@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -25,6 +26,7 @@ public class CostumerStateManager : MonoBehaviour
     public Transform costumerArea;
     public SalesAreaController taskLocations;
     public bool isWalkDone;
+    [SerializeField] public bool thief;
 
     private float _coolDownSec = 2f;
     private bool _isCoolDown = true;
@@ -56,6 +58,12 @@ public class CostumerStateManager : MonoBehaviour
         {
             SwitchState(MoveTaskPosState);
         }
+
+        if (other.gameObject.CompareTag("Player") && thief)
+        {
+            thief = false;
+            //todo thief caught
+        }
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
@@ -65,7 +73,15 @@ public class CostumerStateManager : MonoBehaviour
         {
             _isCoolDown = true;
             taskLocations.occupied = false;
-            GameManager.instance.CollectCoin(Random.Range(100, 200));
+            int randomInt = Random.RandomRange(0, 2);
+            if (randomInt == 1)
+            {
+                GameManager.instance.CollectCoin(Random.Range(100, 200));
+            }
+            else
+            {
+                //todo thiefDetected
+            }
             SwitchState(ReturnAreaState);
             Destroy(product.gameObject);
         }
@@ -93,4 +109,25 @@ public class CostumerStateManager : MonoBehaviour
         CurrentState = state;
         state.EnterState(this);
     }
+
+    public void ThiefCaught()
+    {
+        transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = Color.green;
+        thief = false;
+        GameManager.instance.CollectCoin(Random.Range(100,200));
+    }
+    
+    public void ThiefEscaped()
+    {
+        transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = Color.green;
+        thief = false;
+    }
+    
+    public void ThiefDetected()
+    {
+        thief = true;
+        transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = Color.red;
+        Debug.Log("Thief Detected");
+    }
+    
 }

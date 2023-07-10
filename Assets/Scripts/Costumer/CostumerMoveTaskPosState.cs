@@ -25,6 +25,7 @@ public class CostumerMoveTaskPosState : CostumerBaseState
             costumer.isWalkDone = true;
             costumer.product = collision.gameObject.transform.GetChild(1).transform.GetChild(1).transform;
             costumer.SwitchState(costumer.TaskDoneState);
+            //todo Thief Escaped
         }
     }
 }

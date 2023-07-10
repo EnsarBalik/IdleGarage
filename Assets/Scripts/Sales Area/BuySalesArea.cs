@@ -9,8 +9,8 @@ using TMPro;
 public class BuySalesArea : MonoBehaviour
 {
     public string id;
-    public TextMeshPro SellAreaText;
-    public SpriteRenderer SellAreaImage;
+    public TextMeshProUGUI SellAreaText;
+    public Image SellAreaImage;
     public bool isSold;
     public int cost;
 

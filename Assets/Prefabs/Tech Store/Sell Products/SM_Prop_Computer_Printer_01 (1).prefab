@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4601760215843791031}
   - component: {fileID: 4592294905519816791}
   - component: {fileID: 4584491366576202425}
-  - component: {fileID: 4551297157161898051}
   m_Layer: 0
   m_Name: SM_Prop_Computer_Printer_01 (1)
   m_TagString: Untagged
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4551297157161898051
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4596563888020072497}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43442371317262606, guid: d2540522631c1ed4a836c46ee8ccad39, type: 2}

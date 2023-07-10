@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7689587237845050384}
   - component: {fileID: 7696089923490193848}
   - component: {fileID: 7704431902701920768}
-  - component: {fileID: 7664460555084710912}
   m_Layer: 0
   m_Name: SM_Prop_Computer_Monitor_05
   m_TagString: Untagged
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7664460555084710912
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7691478481447990116}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43709942057975952, guid: ab2886ce24664754e967536bb93c7f8f, type: 2}

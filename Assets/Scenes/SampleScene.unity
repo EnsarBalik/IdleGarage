@@ -2174,6 +2174,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6644829062922040378, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644829062922040378, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
+        type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -2202,6 +2207,22 @@ PrefabInstance:
       propertyPath: fillImage
       value: 
       objectReference: {fileID: 972463640}
+    - target: {fileID: 9057619779821775616, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
+        type: 3}
+      propertyPath: createCargo
+      value: 
+      objectReference: {fileID: 8455805279766573732, guid: e7dec36f400e0ac4bbefb75042e1a76a,
+        type: 3}
+    - target: {fileID: 9057619779821775616, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
+        type: 3}
+      propertyPath: cargo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9057619779821775616, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
+        type: 3}
+      propertyPath: cargo.Array.data[0]
+      value: 
+      objectReference: {fileID: 414507986}
     - target: {fileID: 9057619779821775616, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
         type: 3}
       propertyPath: cargoArriveTimeText
@@ -2479,6 +2500,12 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &414507986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6646612905457812760, guid: bf2a5cdaf69848c46b6f8895d6818f5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 393902487}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &417632579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7053,6 +7080,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SellArea (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272403484193933925, guid: efee6fc98b3bfc54a803ec926d042e50,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 0.331
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398256605019789359, guid: efee6fc98b3bfc54a803ec926d042e50,
+        type: 3}
+      propertyPath: id
+      value: SellArea1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efee6fc98b3bfc54a803ec926d042e50, type: 3}

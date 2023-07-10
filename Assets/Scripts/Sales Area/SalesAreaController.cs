@@ -32,8 +32,7 @@ public class SalesAreaController : MonoBehaviour
             valuableList[^1].transform.parent = transform;
             valuableList[^1].transform.rotation = quaternion.identity;
             valuableList[^1].transform.GetChild(0).GetComponent<ParticleSystem>().Play();
-            GameObject randomProduct = valuableList[^1].transform.GetChild(1).transform.GetChild(Random.Range(1, 25))
-                .gameObject;
+            GameObject randomProduct = valuableList[^1].transform.GetChild(1).transform.GetChild(Random.Range(1, 25)).gameObject;
             GameObject box = valuableList[^1].transform.GetChild(1).transform.GetChild(0).gameObject;
             box.SetActive(false);
             randomProduct.SetActive(true);

@@ -23,9 +23,8 @@ public class CostumerMoveTaskPosState : CostumerBaseState
         if (collision.gameObject.CompareTag("CollectArea1"))
         {
             costumer.isWalkDone = true;
-            costumer.product = collision.gameObject.transform.GetChild(1).transform.GetChild(1).transform;
+            costumer.product = collision.gameObject.transform.GetChild(0).transform.GetChild(1).transform;
             costumer.SwitchState(costumer.TaskDoneState);
-            //todo Thief Escaped
         }
     }
 }

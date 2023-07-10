@@ -18,9 +18,6 @@ public class CostumerStateManager : MonoBehaviour
     public NavMeshAgent _navMeshAgent;
 
     public Animator animatorController;
-
-    public List<GameObject> sellProducts;
-
     [SerializeField] public Transform movePositionTransform;
     public Transform product;
     public Transform costumerArea;
@@ -57,12 +54,13 @@ public class CostumerStateManager : MonoBehaviour
         if (other.gameObject.CompareTag("Costumer Area"))
         {
             SwitchState(MoveTaskPosState);
+            ThiefEscaped();
         }
 
         if (other.gameObject.CompareTag("Player") && thief)
         {
             thief = false;
-            //todo thief caught
+            ThiefCaught();
         }
     }
 
@@ -80,7 +78,7 @@ public class CostumerStateManager : MonoBehaviour
             }
             else
             {
-                //todo thiefDetected
+                ThiefDetected();
             }
             SwitchState(ReturnAreaState);
             Destroy(product.gameObject);

@@ -36,7 +36,7 @@ public class BuySalesArea : MonoBehaviour
     private void LateUpdate()
     {
         if (!isSold) return;
-        var salesAreaController = gameObject.transform.GetChild(1).GetComponent<SalesAreaController>();
+        var salesAreaController = gameObject.transform.GetChild(0).GetComponent<SalesAreaController>();
         SellAreaText.text = salesAreaController.occupied ? " " : "Empty";
         SellAreaImage.color = Color.white;
         SellAreaText.color = Color.white;
@@ -61,20 +61,20 @@ public class BuySalesArea : MonoBehaviour
         if (isSold) return;
         if (other.gameObject.CompareTag("Player") && PlayerPrefs.GetInt("myCoin") >= cost)
         {
-            fillImage.gameObject.SetActive(true);
+            SellAreaImage.gameObject.SetActive(true);
             if (!isCoolDown)
             {
                 Sale(cost);
                 isCoolDown = true;
-                fillImage.gameObject.SetActive(false);
+                SellAreaImage.gameObject.SetActive(false);
             }
 
             if (isCoolDown)
             {
-                fillImage.fillAmount += 1 / coolDownSec * Time.deltaTime;
-                if (fillImage.fillAmount >= 1)
+                SellAreaImage.fillAmount += 1 / coolDownSec * Time.deltaTime;
+                if (SellAreaImage.fillAmount >= 1)
                 {
-                    fillImage.fillAmount = 0;
+                    SellAreaImage.fillAmount = 0;
                     isCoolDown = false;
                 }
             }

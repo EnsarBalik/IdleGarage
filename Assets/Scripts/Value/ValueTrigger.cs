@@ -17,6 +17,10 @@ public class ValueTrigger : MonoBehaviour
     private float cargoCoolDownSec = 10f;
     public TextMeshProUGUI cargoArriveTimeText;
 
+    public List<GameObject> cargo;
+
+    public GameObject createCargo;
+
     private void Start()
     {
         fillImage.fillAmount = 0;
@@ -35,9 +39,10 @@ public class ValueTrigger : MonoBehaviour
             fillImage.gameObject.SetActive(true);
             if (!isCoolDown)
             {
-                ValueController.instance.StackObjet(transform.GetChild(0).gameObject,
+                ValueController.instance.StackObjet(transform.GetChild(transform.childCount - 1).gameObject,
                     ValueController.instance.valuableList.Count - 1);
-                transform.GetChild(0).parent = ValueController.instance.transform;
+                cargo.Remove(transform.GetChild(transform.childCount - 1).gameObject);
+                transform.GetChild(transform.childCount - 1).parent = ValueController.instance.transform;
                 isCoolDown = true;
             }
 
@@ -68,6 +73,7 @@ public class ValueTrigger : MonoBehaviour
         {
             cargoCoolDown = true;
             Debug.Log("Cargo Arrived");
+            CreateCargo();
         }
 
         if (cargoCoolDown)
@@ -80,8 +86,38 @@ public class ValueTrigger : MonoBehaviour
             }
         }
 
-        var test = Mathf.CeilToInt(cargoArricalTime * 10);
+        var timeCounter = Mathf.CeilToInt(cargoArricalTime * 10);
 
-        cargoArriveTimeText.text = test.ToString();
+        cargoArriveTimeText.text = timeCounter.ToString();
     }
+
+    private void CreateCargo()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            if (cargo.Count <= 20)
+            {
+                var cargoGm = Instantiate(createCargo, transform.position, Quaternion.identity, transform);
+                Vector3 newPos = cargo[^1].transform.position;
+                newPos.x += 1f;
+                if (newPos.x >= 3f)
+                {
+                    if (newPos.y >= 1f)
+                    {
+                        newPos.y = -0.5f;
+                        newPos.z += 1;
+                    }
+                    else
+                    {
+                        newPos.y += 1f;
+                        newPos.x = -2;
+                    }
+                }
+
+                cargoGm.transform.position = newPos;
+                cargo.Add(cargoGm);
+            }
+        }
+    }
+    
 }

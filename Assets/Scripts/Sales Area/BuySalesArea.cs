@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Game.User;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,6 +50,7 @@ public class BuySalesArea : MonoBehaviour
         Cost = cost;
         if (PlayerPrefs.GetInt("myCoin") >= Cost)
         {
+            transform.GetChild(2).transform.DOShakeScale(0.5f, 1);
             SellAreaImage.color = Color.white;
             SellAreaText.color = Color.white;
             GameManager.instance.SpendMoney(cost);

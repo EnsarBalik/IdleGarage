@@ -14,7 +14,6 @@ public class BuySalesArea : MonoBehaviour
     public bool isSold;
     public int cost;
 
-    public Image fillImage;
     private bool isCoolDown = true;
     private float coolDownSec = 1f;
 
@@ -31,6 +30,8 @@ public class BuySalesArea : MonoBehaviour
         isSold = PlayerPrefs.GetFloat(id) == 1f;
 
         SellAreaText.text = !isSold ? "$ " + cost : "Empty";
+        if (!isSold) return;
+        SellAreaImage.fillAmount = 1f;
     }
 
     private void LateUpdate()
@@ -66,7 +67,6 @@ public class BuySalesArea : MonoBehaviour
             {
                 Sale(cost);
                 isCoolDown = true;
-                SellAreaImage.gameObject.SetActive(false);
             }
 
             if (isCoolDown)
@@ -74,18 +74,10 @@ public class BuySalesArea : MonoBehaviour
                 SellAreaImage.fillAmount += 1 / coolDownSec * Time.deltaTime;
                 if (SellAreaImage.fillAmount >= 1)
                 {
-                    SellAreaImage.fillAmount = 0;
+                    //SellAreaImage.fillAmount = 0;
                     isCoolDown = false;
                 }
             }
-        }
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            fillImage.gameObject.SetActive(false);
         }
     }
 }

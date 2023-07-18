@@ -25,7 +25,7 @@ public class CostumerStateManager : MonoBehaviour
     public bool isWalkDone;
     [SerializeField] public bool thief;
 
-    private float _coolDownSec = 2f;
+    private const float CoolDownSec = 2f;
     private bool _isCoolDown = true;
     private float _fillImage;
 
@@ -86,7 +86,7 @@ public class CostumerStateManager : MonoBehaviour
 
         if (_isCoolDown)
         {
-            _fillImage += 1 / _coolDownSec * Time.deltaTime;
+            _fillImage += 1 / CoolDownSec * Time.deltaTime;
             if (_fillImage >= 1)
             {
                 _fillImage = 0;
@@ -108,20 +108,20 @@ public class CostumerStateManager : MonoBehaviour
         state.EnterState(this);
     }
 
-    public void ThiefCaught()
+    private void ThiefCaught()
     {
         transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = Color.green;
         thief = false;
         GameManager.instance.CollectCoin(Random.Range(100,200));
     }
     
-    public void ThiefEscaped()
+    private void ThiefEscaped()
     {
         transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = Color.green;
         thief = false;
     }
     
-    public void ThiefDetected()
+    private void ThiefDetected()
     {
         thief = true;
         transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = Color.red;

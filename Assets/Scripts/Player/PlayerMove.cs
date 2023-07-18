@@ -61,4 +61,12 @@ public class PlayerMove : MonoBehaviour
             playerAnimator.SetBool("Attack", true);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Costumer"))
+        {
+            playerAnimator.SetBool("Attack", false);
+        }
+    }
 }

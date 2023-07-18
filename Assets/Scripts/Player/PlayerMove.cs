@@ -15,9 +15,10 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float moveSpeed;
     
     public Animator playerAnimator;
+    public GameObject baseballBat;
 
     public bool playPauseSmoke;
-    
+
     private void Start()
     {
         instance = this;

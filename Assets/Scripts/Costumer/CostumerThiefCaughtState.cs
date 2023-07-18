@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CostumerThiefCaughtState : MonoBehaviour
+public class CostumerThiefCaughtState : CostumerBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void EnterState(CostumerStateManager costumer)
+    {
+        costumer.animatorController.SetBool("Fallen",true);
+        costumer.StartCoroutine(costumer.Timer());
+    }
+
+    public override void UpdateState(CostumerStateManager costumer)
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void TriggerEnter(CostumerStateManager costumer, Collider collision)
     {
         
     }

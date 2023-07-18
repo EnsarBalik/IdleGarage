@@ -939,6 +939,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 115661389}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &122804436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1850600616112740, guid: 860ade0594eaba94d888d4073f07a490,
+    type: 3}
+  m_PrefabInstance: {fileID: 1983592374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &153423662 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6876284320788454343, guid: 540a8883f4fd7e540bdc933ff4ae2f3e,
@@ -7895,6 +7901,16 @@ PrefabInstance:
       propertyPath: taskLocations.Array.data[1]
       value: 
       objectReference: {fileID: 1165069829}
+    - target: {fileID: 3854401862442103724, guid: 1295172926827694ca3dc5c5a8f569af,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854401862442103724, guid: 1295172926827694ca3dc5c5a8f569af,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4937743544795179736, guid: 1295172926827694ca3dc5c5a8f569af,
         type: 3}
       propertyPath: m_Constraints
@@ -8539,6 +8555,10 @@ PrefabInstance:
     - target: {fileID: 1850600616112740, guid: 860ade0594eaba94d888d4073f07a490, type: 3}
       propertyPath: m_Name
       value: Mob_Baseball_Bat_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850600616112740, guid: 860ade0594eaba94d888d4073f07a490, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4093408953815162, guid: 860ade0594eaba94d888d4073f07a490, type: 3}
       propertyPath: m_RootOrder
@@ -10463,6 +10483,7 @@ MonoBehaviour:
   joystick: {fileID: 2086854320}
   moveSpeed: 10
   playerAnimator: {fileID: 5866666020867394543}
+  baseballBat: {fileID: 122804436}
   playPauseSmoke: 0
 --- !u!54 &5866666020867394545
 Rigidbody:
@@ -10718,6 +10739,16 @@ PrefabInstance:
       propertyPath: taskLocations.Array.data[1]
       value: 
       objectReference: {fileID: 1165069829}
+    - target: {fileID: 3854401862442103724, guid: 1295172926827694ca3dc5c5a8f569af,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854401862442103724, guid: 1295172926827694ca3dc5c5a8f569af,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4937743544795179736, guid: 1295172926827694ca3dc5c5a8f569af,
         type: 3}
       propertyPath: m_Constraints

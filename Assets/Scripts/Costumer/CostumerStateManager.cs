@@ -8,31 +8,29 @@ using Random = UnityEngine.Random;
 
 public class CostumerStateManager : MonoBehaviour
 {
-    public static CostumerStateManager instance;
-
     public CostumerBaseState CurrentState;
     public readonly CostumerMoveTaskPosState MoveTaskPosState = new CostumerMoveTaskPosState();
     public readonly CostumerTaskDoneState TaskDoneState = new CostumerTaskDoneState();
     public readonly CostumerReturnAreaState ReturnAreaState = new CostumerReturnAreaState();
+    public readonly CostumerThiefCaughtState ThiefCaughtState = new CostumerThiefCaughtState();
 
     public NavMeshAgent _navMeshAgent;
+    public SalesAreaController taskLocations;
 
     public Animator animatorController;
     [SerializeField] public Transform movePositionTransform;
     public Transform product;
     public Transform costumerArea;
-    public SalesAreaController taskLocations;
     public bool isWalkDone;
-    [SerializeField] public bool thief;
 
     private const float CoolDownSec = 2f;
     private bool _isCoolDown = true;
+    [SerializeField] private bool thief;
     private float _fillImage;
+    public ParticleSystem thiefEffect;
 
     private void Start()
     {
-        instance = this;
-
         _navMeshAgent = GetComponent<NavMeshAgent>();
 
         CurrentState = MoveTaskPosState;
@@ -80,6 +78,7 @@ public class CostumerStateManager : MonoBehaviour
             {
                 ThiefDetected();
             }
+
             SwitchState(ReturnAreaState);
             Destroy(product.gameObject);
         }
@@ -111,21 +110,52 @@ public class CostumerStateManager : MonoBehaviour
     private void ThiefCaught()
     {
         transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = Color.green;
+        thiefEffect.Play();
         thief = false;
-        GameManager.instance.CollectCoin(Random.Range(100,200));
+        _navMeshAgent.isStopped = true;
+        GameManager.instance.CollectCoin(Random.Range(100, 200));
+        animatorController.SetBool("Walking", false);
+        PlayerMove.instance.baseballBat.SetActive(false);
+        var valuableList = ValueController.instance.valuableList;
+        for (int i = 0; i < valuableList.Count; i++)
+        {
+            valuableList[i].gameObject.SetActive(true);
+        }
+        SwitchState(ThiefCaughtState);
     }
-    
+
     private void ThiefEscaped()
     {
         transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = Color.green;
         thief = false;
+        PlayerMove.instance.baseballBat.SetActive(false);
+        var valuableList = ValueController.instance.valuableList;
+        for (int i = 0; i < valuableList.Count; i++)
+        {
+            valuableList[i].gameObject.SetActive(true);
+        }
     }
-    
+
     private void ThiefDetected()
     {
         thief = true;
         transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = Color.red;
+        PlayerMove.instance.baseballBat.SetActive(true);
+        var valuableList = ValueController.instance.valuableList;
+        for (int i = 0; i < valuableList.Count; i++)
+        {
+            valuableList[i].gameObject.SetActive(false);
+        }
+
         Debug.Log("Thief Detected");
     }
-    
+
+    public IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(4f);
+        _navMeshAgent.isStopped = false;
+        animatorController.SetBool("Fallen", false);
+        animatorController.SetBool("Walking", true);
+        SwitchState(ReturnAreaState);
+    }
 }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6744307088483345960}
   - component: {fileID: 6769149403015259864}
   - component: {fileID: 6763188317781416096}
-  - component: {fileID: 6732200784856521910}
   m_Layer: 0
   m_Name: SM_Prop_Trash_Bags_01
   m_TagString: Untagged
@@ -28,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 6741776549590364348}
   m_LocalRotation: {x: -0, y: 0.36749816, z: -0, w: 0.9300243}
   m_LocalPosition: {x: 21.244106, y: 0, z: -22.983189}
-  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6732200784856521910
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6741776549590364348}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43807422622120852, guid: 2b5e80e8c250c3c43bb4b88cbbb29bf4, type: 2}

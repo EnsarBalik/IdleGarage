@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4732342624014393721}
   - component: {fileID: 4740093868710685203}
   - component: {fileID: 4751060573870159647}
-  - component: {fileID: 4707572610484664555}
   m_Layer: 0
   m_Name: SM_Sign_Large_Tech_01 (2)
   m_TagString: Untagged
@@ -84,16 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4707572610484664555
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4735668108710529181}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.2041426, y: 1.2156497, z: 0.18317528}
-  m_Center: {x: -0.056324482, y: 0.6078257, z: -0.00000008195639}

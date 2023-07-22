@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 719443071470363308}
   - component: {fileID: 685554682108167870}
   - component: {fileID: 695289084764894294}
-  - component: {fileID: 654088399812018300}
   m_Layer: 0
   m_Name: SM_Prop_Computer_Mouse_Box_02 (2)
   m_TagString: Untagged
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &654088399812018300
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716479692763399306}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43954862307989002, guid: d456c90d6a890814d8fd26696f02d4fe, type: 2}

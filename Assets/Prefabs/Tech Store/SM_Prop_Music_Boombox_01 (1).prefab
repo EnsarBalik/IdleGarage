@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1364078237198461669}
   - component: {fileID: 1339758376597595397}
   - component: {fileID: 1347517851955034037}
-  - component: {fileID: 1298485430787984309}
   m_Layer: 0
   m_Name: SM_Prop_Music_Boombox_01 (1)
   m_TagString: Untagged
@@ -85,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1298485430787984309
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361471515168517405}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43255255432843414, guid: 98f222c73d140a748aca3e824085111b, type: 2}
 --- !u!1 &1361709920835078629
 GameObject:
   m_ObjectHideFlags: 0

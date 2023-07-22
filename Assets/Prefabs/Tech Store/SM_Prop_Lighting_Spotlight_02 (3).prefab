@@ -177,7 +177,6 @@ GameObject:
   - component: {fileID: 8556582957156400024}
   - component: {fileID: 8563800885457989798}
   - component: {fileID: 8573471238388986378}
-  - component: {fileID: 8523872010846263036}
   m_Layer: 0
   m_Name: SM_Prop_Lighting_Spotlight_02 (3)
   m_TagString: Untagged
@@ -254,20 +253,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8523872010846263036
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8551046888817595970}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43440633149790240, guid: 977f98b67505dd54cbb50ee3ab76798b, type: 2}
 --- !u!1 &8551066323673847658
 GameObject:
   m_ObjectHideFlags: 0

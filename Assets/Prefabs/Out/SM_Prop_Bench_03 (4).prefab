@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6862680781625545884}
   - component: {fileID: 6869166809383294398}
   - component: {fileID: 6879521484207833532}
-  - component: {fileID: 6901881313423890354}
   m_Layer: 0
   m_Name: SM_Prop_Bench_03 (4)
   m_TagString: Untagged
@@ -28,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 6857317303164142466}
   m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -38, y: 0, z: -16.25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6901881313423890354
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6857317303164142466}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43709112215822276, guid: b827929db01044948985e825bda16753, type: 2}

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2733572371767160080}
   - component: {fileID: 2704936728598511946}
   - component: {fileID: 2714000148987882004}
-  - component: {fileID: 2673875756965877870}
   m_Layer: 0
   m_Name: SM_Prop_Shop_Desk_06 (1)
   m_TagString: Untagged
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2673875756965877870
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2736803082131602582}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43175200722030102, guid: ac323e56282d730458c1ea85e5f0da6d, type: 2}

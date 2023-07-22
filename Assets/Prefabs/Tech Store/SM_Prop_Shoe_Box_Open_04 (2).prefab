@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 3646687435094397518}
   - component: {fileID: 3666729966932623202}
   - component: {fileID: 3657299629985020044}
-  - component: {fileID: 3634816560243746304}
   m_Layer: 0
   m_Name: SM_Prop_Shoe_Box_Open_04 (2)
   m_TagString: Untagged
@@ -168,17 +167,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3634816560243746304
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3644295702358394534}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43252575247789106, guid: 59510f8fceb5ca44e8a89ed715de578d, type: 2}

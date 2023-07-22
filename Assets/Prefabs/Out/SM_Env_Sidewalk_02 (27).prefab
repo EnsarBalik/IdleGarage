@@ -11,13 +11,12 @@ GameObject:
   - component: {fileID: 836271144129492107}
   - component: {fileID: 864481539820290001}
   - component: {fileID: 853860651232484691}
-  - component: {fileID: 823518298351003903}
   m_Layer: 0
   m_Name: SM_Env_Sidewalk_02 (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &836271144129492107
 Transform:
@@ -28,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 832772463544878465}
   m_LocalRotation: {x: -0, y: -0.00000031292436, z: -0, w: 1}
   m_LocalPosition: {x: -40, y: 0, z: -35}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -84,16 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &823518298351003903
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832772463544878465}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.4999914, y: 0.18180592, z: 2.5}
-  m_Center: {x: -1.2499957, y: -0.056054704, z: 1.25}

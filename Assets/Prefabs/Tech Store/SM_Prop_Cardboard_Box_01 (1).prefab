@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7673758868301425988}
   - component: {fileID: 7645135114129749042}
   - component: {fileID: 7655550702448457146}
-  - component: {fileID: 7677932260768180312}
   m_Layer: 0
   m_Name: SM_Prop_Cardboard_Box_01 (1)
   m_TagString: Untagged
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7677932260768180312
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7668017201326611562}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43809464317697764, guid: af3b648f775422f419b8894e9c1d7fbf, type: 2}

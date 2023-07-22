@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 204345014544640664}
   - component: {fileID: 193648068567999090}
   - component: {fileID: 182697630896401728}
-  - component: {fileID: 161050374628530094}
   m_Layer: 0
   m_Name: SM_Prop_Bollard_01 (58)
   m_TagString: Untagged
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &161050374628530094
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206891915687765016}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43901500529782728, guid: dac70c69cb700284cb4cdcd5538c0a3f, type: 2}

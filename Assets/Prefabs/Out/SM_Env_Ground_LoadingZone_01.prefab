@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7118212923630591558}
   - component: {fileID: 7106806383664871246}
   - component: {fileID: 7101065349997048020}
-  - component: {fileID: 7079430943259838548}
   m_Layer: 0
   m_Name: SM_Env_Ground_LoadingZone_01
   m_TagString: Untagged
@@ -84,16 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7079430943259838548
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7124252543468977532}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10.00004, y: 0, z: 4.999985}
-  m_Center: {x: -5.00002, y: 0, z: 2.4999926}

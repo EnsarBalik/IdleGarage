@@ -53,20 +53,4 @@ public class PlayerMove : MonoBehaviour
         
         playerAnimator.SetBool("IdleCarry", ValueController.instance.valuableList.Count > 1);
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Costumer"))
-        {
-            playerAnimator.SetBool("Attack", true);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Costumer"))
-        {
-            playerAnimator.SetBool("Attack", false);
-        }
-    }
 }

@@ -62,6 +62,14 @@ public class CostumerStateManager : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            PlayerMove.instance.playerAnimator.SetBool("Attack", false);
+        }
+    }
+
     // ReSharper disable Unity.PerformanceAnalysis
     public void BuyProduct()
     {
@@ -121,6 +129,7 @@ public class CostumerStateManager : MonoBehaviour
         {
             valuableList[i].gameObject.SetActive(true);
         }
+        PlayerMove.instance.playerAnimator.SetBool("Attack", true);
         SwitchState(ThiefCaughtState);
     }
 

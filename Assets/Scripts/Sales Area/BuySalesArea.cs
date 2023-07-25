@@ -76,7 +76,6 @@ public class BuySalesArea : MonoBehaviour
                 SellAreaImage.fillAmount += 1 / coolDownSec * Time.deltaTime;
                 if (SellAreaImage.fillAmount >= 1)
                 {
-                    //SellAreaImage.fillAmount = 0;
                     isCoolDown = false;
                 }
             }

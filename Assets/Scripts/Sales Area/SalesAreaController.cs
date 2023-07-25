@@ -15,6 +15,7 @@ public class SalesAreaController : MonoBehaviour
     public BuySalesArea BuySalesArea;
 
     public Transform place;
+    public Transform standHere;
 
     public bool occupied;
 
@@ -32,12 +33,14 @@ public class SalesAreaController : MonoBehaviour
             valuableList[^1].transform.parent = transform;
             valuableList[^1].transform.rotation = quaternion.identity;
             valuableList[^1].transform.GetChild(0).GetComponent<ParticleSystem>().Play();
-            GameObject randomProduct = valuableList[^1].transform.GetChild(1).transform.GetChild(Random.Range(1, 25)).gameObject;
+            GameObject randomProduct = valuableList[^1].transform.GetChild(1).transform.GetChild(Random.Range(1, 25))
+                .gameObject;
             GameObject box = valuableList[^1].transform.GetChild(1).transform.GetChild(0).gameObject;
             box.SetActive(false);
             randomProduct.SetActive(true);
             valuableList.Remove(valuableList[^1]);
             occupied = true;
+            CostumerStateManager.instance.FindProduct(this, standHere);
         }
     }
 }

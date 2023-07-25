@@ -8,29 +8,37 @@ using Random = UnityEngine.Random;
 
 public class CostumerStateManager : MonoBehaviour
 {
+    public static CostumerStateManager instance;
+
     public CostumerBaseState CurrentState;
     public readonly CostumerMoveTaskPosState MoveTaskPosState = new CostumerMoveTaskPosState();
     public readonly CostumerTaskDoneState TaskDoneState = new CostumerTaskDoneState();
     public readonly CostumerReturnAreaState ReturnAreaState = new CostumerReturnAreaState();
     public readonly CostumerThiefCaughtState ThiefCaughtState = new CostumerThiefCaughtState();
 
-    public NavMeshAgent _navMeshAgent;
-    public SalesAreaController taskLocations;
-
+    [Header("NavMesh & Anim")] public NavMeshAgent _navMeshAgent;
     public Animator animatorController;
+
+    [Header("Task Components")] public SalesAreaController taskLocations;
     [SerializeField] public Transform movePositionTransform;
     public Transform product;
-    public Transform costumerArea;
-    public bool isWalkDone;
+
+    [Header(" ")] public Transform costumerArea;
+
+    public ParticleSystem thiefEffect;
+    public ParticleSystem moneyEffect;
 
     private const float CoolDownSec = 2f;
+    public bool isOccupied;
     private bool _isCoolDown = true;
+    public bool isWalkDone;
     [SerializeField] private bool thief;
     private float _fillImage;
-    public ParticleSystem thiefEffect;
 
     private void Start()
     {
+        instance = this;
+
         _navMeshAgent = GetComponent<NavMeshAgent>();
 
         CurrentState = MoveTaskPosState;
@@ -119,6 +127,7 @@ public class CostumerStateManager : MonoBehaviour
     {
         transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material.color = Color.green;
         thiefEffect.Play();
+        moneyEffect.Play();
         thief = false;
         _navMeshAgent.isStopped = true;
         GameManager.instance.CollectCoin(Random.Range(100, 200));
@@ -129,6 +138,7 @@ public class CostumerStateManager : MonoBehaviour
         {
             valuableList[i].gameObject.SetActive(true);
         }
+
         PlayerMove.instance.playerAnimator.SetBool("Attack", true);
         SwitchState(ThiefCaughtState);
     }
@@ -166,5 +176,13 @@ public class CostumerStateManager : MonoBehaviour
         animatorController.SetBool("Fallen", false);
         animatorController.SetBool("Walking", true);
         SwitchState(ReturnAreaState);
+    }
+
+    public void FindProduct(SalesAreaController sac, Transform standHere)
+    {
+        if (isOccupied) return;
+        taskLocations = sac;
+        movePositionTransform = standHere;
+        isOccupied = true;
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -10,21 +11,27 @@ public class BuyNewIsland : MonoBehaviour
 {
     public string id;
     public Image fillImage;
-    public GameObject island;
+    public ParticleSystem cloud;
+    public GameObject _lock;
     public GameObject triggers;
+
+    public CinemachineVirtualCamera playerCam;
+    public CinemachineVirtualCamera lockCam;
     public bool isSold;
     public int cost;
 
     private bool isCoolDown = true;
     private float coolDownSec = 1f;
+
     private void Start()
     {
         isSold = PlayerPrefs.GetFloat(id) == 1f;
-        
+
         fillImage.fillAmount = 0;
         if (isSold)
         {
-            island.SetActive(true);
+            cloud.Stop();
+            _lock.SetActive(false);
             triggers.SetActive(false);
             gameObject.SetActive(false);
         }
@@ -39,16 +46,28 @@ public class BuyNewIsland : MonoBehaviour
             isSold = true;
             PlayerPrefs.SetFloat(id, 1f);
             fillImage.gameObject.SetActive(false);
-            island.SetActive(true);
             triggers.SetActive(false);
             gameObject.SetActive(false);
-            island.transform.DOShakeScale(0.5f, 10f, 10, 360f);
+            cloud.Stop();
+            _lock.SetActive(false);
+            playerCam.gameObject.SetActive(true);
+            lockCam.gameObject.SetActive(false);
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag($"Player"))
+        {
+            BuySpendTime();
+            playerCam.gameObject.SetActive(false);
+            lockCam.gameObject.SetActive(true);
+        }
+    }
+
+    private void BuySpendTime()
+    {
+        if (PlayerPrefs.GetInt("myCoin") >= cost)
         {
             fillImage.gameObject.SetActive(true);
             if (!isCoolDown)
@@ -68,12 +87,15 @@ public class BuyNewIsland : MonoBehaviour
             }
         }
     }
-    
+
     public void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             fillImage.gameObject.SetActive(false);
+            fillImage.fillAmount = 0;
+            playerCam.gameObject.SetActive(true);
+            lockCam.gameObject.SetActive(false);
         }
     }
 }

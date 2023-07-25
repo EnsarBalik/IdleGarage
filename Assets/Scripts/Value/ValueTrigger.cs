@@ -61,10 +61,9 @@ public class ValueTrigger : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            fillImage.gameObject.SetActive(false);
-        }
+        if (!other.gameObject.CompareTag("Player")) return;
+        fillImage.gameObject.SetActive(false);
+        fillImage.fillAmount = 0;
     }
 
     private void CargoArrivalTime()

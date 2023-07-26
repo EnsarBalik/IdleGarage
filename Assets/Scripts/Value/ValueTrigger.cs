@@ -14,7 +14,7 @@ public class ValueTrigger : MonoBehaviour
 
     private float cargoArricalTime;
     private bool cargoCoolDown = true;
-    private float cargoCoolDownSec = 10f;
+    private float cargoCoolDownSec = 3f;
     public TextMeshProUGUI cargoArriveTimeText;
 
     public List<GameObject> cargo;

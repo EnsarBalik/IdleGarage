@@ -13,7 +13,8 @@ public class SalesAreaController : MonoBehaviour
     public static SalesAreaController instance;
 
     public BuySalesArea BuySalesArea;
-
+    public CostumerManager costumerManager; 
+    
     public Transform place;
     public Transform standHere;
 
@@ -40,7 +41,8 @@ public class SalesAreaController : MonoBehaviour
             randomProduct.SetActive(true);
             valuableList.Remove(valuableList[^1]);
             occupied = true;
-            CostumerStateManager.instance.FindProduct(this, standHere);
+            //CostumerStateManager.instance.FindProduct(this, standHere);
+            costumerManager.Test(this,standHere);
         }
     }
 }

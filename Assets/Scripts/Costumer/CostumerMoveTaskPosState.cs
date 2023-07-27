@@ -11,6 +11,7 @@ public class CostumerMoveTaskPosState : CostumerBaseState
 
     public override void UpdateState(CostumerStateManager costumer)
     {
+        if (costumer.taskLocations == null && costumer.movePositionTransform == null) return;
         if (!costumer.taskLocations.occupied) return;
         costumer._navMeshAgent.destination = costumer.movePositionTransform.position;
         costumer.animatorController.SetBool("Walking", true);

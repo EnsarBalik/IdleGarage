@@ -13,13 +13,18 @@ MonoBehaviour:
   m_Name: DataBase
   m_EditorClassIdentifier: 
   ObjectDatas:
-  - <Name>k__BackingField: Shelf
+  - <Name>k__BackingField: Floor
     <ID>k__BackingField: 0
+    <Size>k__BackingField: {x: 3, y: 3}
+    <Prefab>k__BackingField: {fileID: 1414955624980994221, guid: 520a88fb59c6b904fb02151f6c766b23,
+      type: 3}
+  - <Name>k__BackingField: Table
+    <ID>k__BackingField: 1
     <Size>k__BackingField: {x: 3, y: 1}
     <Prefab>k__BackingField: {fileID: 2712315722739376816, guid: 0b446f0f644e44c4ab62b7ee45fcf25f,
       type: 3}
   - <Name>k__BackingField: Sell Area
-    <ID>k__BackingField: 1
+    <ID>k__BackingField: 2
     <Size>k__BackingField: {x: 5, y: 5}
     <Prefab>k__BackingField: {fileID: 2193530256208268994, guid: efee6fc98b3bfc54a803ec926d042e50,
       type: 3}

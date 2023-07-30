@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlacementState
+public class PlacementState : IBuildingState
 {
     private int selectedObjectIndex = -1;
     int ID;
@@ -33,4 +33,39 @@ public class PlacementState
         else
             throw new System.Exception($"No object with ID {iD}");
     }
+
+    public void EndState()
+    {
+        previewSystem.StopShowingPreview();
+    }
+
+    public void OnAction(Vector3Int gridPosition)
+    {
+        bool placementValidity = CheckPlacementValidity(gridPosition, selectedObjectIndex);
+        if (!placementValidity)
+            return;
+
+        int index = objectPlacer.PlaceObject(database.ObjectDatas[selectedObjectIndex].Prefab, grid.CellToWorld(gridPosition));
+        
+        GridData selectedData = database.ObjectDatas[selectedObjectIndex].ID == 0 ? floorData : furnitureData;
+        selectedData.AddObjectAt(gridPosition, database.ObjectDatas[selectedObjectIndex].Size,
+            database.ObjectDatas[selectedObjectIndex].ID, index);
+        
+        previewSystem.UpdatePosition(grid.CellToWorld(gridPosition), false);
+    }
+    
+    private bool CheckPlacementValidity(Vector3Int gridPos, int selectedObjectIndex)
+    {
+        GridData selectedData = database.ObjectDatas[selectedObjectIndex].ID == 0 ? floorData : furnitureData;
+
+        return selectedData.CanPlaceObjectAt(gridPos, database.ObjectDatas[selectedObjectIndex].Size);
+    }
+
+    public void UpdateState(Vector3Int gridPosition)
+    {
+        bool placementValidity = CheckPlacementValidity(gridPosition, selectedObjectIndex);
+
+        previewSystem.UpdatePosition(grid.CellToWorld(gridPosition), placementValidity);
+    }
+    
 }

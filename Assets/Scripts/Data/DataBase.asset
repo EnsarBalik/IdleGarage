@@ -16,7 +16,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Floor
     <ID>k__BackingField: 0
     <Size>k__BackingField: {x: 3, y: 3}
-    <Prefab>k__BackingField: {fileID: 1414955624980994221, guid: 520a88fb59c6b904fb02151f6c766b23,
+    <Prefab>k__BackingField: {fileID: 1431195957319453927, guid: 0e330650e77c762408e3a7ec62549d50,
       type: 3}
   - <Name>k__BackingField: Table
     <ID>k__BackingField: 1

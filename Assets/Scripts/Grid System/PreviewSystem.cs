@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PreviewSystem : MonoBehaviour
@@ -14,7 +15,7 @@ public class PreviewSystem : MonoBehaviour
     private Material previewMaterialInstance;
 
     private Renderer cellIndicatorRenderer;
-    
+
     private void Start()
     {
         previewMaterialInstance = new Material(previewMaterialPrefab);
@@ -32,11 +33,10 @@ public class PreviewSystem : MonoBehaviour
 
     private void PrepareCursor(Vector2Int size)
     {
-        if (size.x > 0 || size.y > 0)
-        {
-            cellIndicator.transform.localScale = new Vector3(size.x, 1, size.y);
-            cellIndicatorRenderer.material.mainTextureScale = size;
-        }
+        if (size is { x: <= 0, y: <= 0 }) return;
+        
+        cellIndicator.transform.localScale = new Vector3(size.x, 2, size.y);
+        cellIndicatorRenderer.material.mainTextureScale = size;
     }
 
     private void PreparePreview(GameObject previewObject)

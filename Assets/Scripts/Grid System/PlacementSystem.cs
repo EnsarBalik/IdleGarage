@@ -18,12 +18,14 @@ public class PlacementSystem : MonoBehaviour
 
     private GridData floorData, furnitureData;
 
-    private List<GameObject> placedGameObject = new();
-
     [SerializeField] private PreviewSystem preview;
 
     private Vector3Int lastDetectedPosition = Vector3Int.zero;
 
+    private bool isRemoving;
+
+    [SerializeField] private ObjectPlacer _objectPlacer;
+    
     private void Start()
     {
         StopPlacement();
@@ -62,12 +64,11 @@ public class PlacementSystem : MonoBehaviour
         if (!placementValidity)
             return;
 
-        GameObject newObject = Instantiate(database.ObjectDatas[selectedObjectIndex].Prefab);
-        newObject.transform.position = grid.CellToWorld(gridPos);
-        placedGameObject.Add(newObject);
+        int index = _objectPlacer.PlaceObject(database.ObjectDatas[selectedObjectIndex].Prefab, grid.CellToWorld(gridPos));
+        
         GridData selectedData = database.ObjectDatas[selectedObjectIndex].ID == 0 ? floorData : furnitureData;
         selectedData.AddObjectAt(gridPos, database.ObjectDatas[selectedObjectIndex].Size,
-            database.ObjectDatas[selectedObjectIndex].ID, placedGameObject.Count - 1);
+            database.ObjectDatas[selectedObjectIndex].ID, index);
         preview.UpdatePosition(grid.CellToWorld(gridPos), false);
     }
 
@@ -101,6 +102,5 @@ public class PlacementSystem : MonoBehaviour
         mouseTest.transform.position = mousePos;
         preview.UpdatePosition(grid.CellToWorld(gridPos), placementValidity);
         lastDetectedPosition = gridPos;
-
     }
 }

@@ -34,6 +34,42 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Layer_530FE22:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_5FF57745:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_6F0471A1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_E2ABC29E:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cubemap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_8ee0135be41842e6ae45a500f16d7ca1_Out_0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2D_Array:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture3D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -53,6 +89,8 @@ Material:
     - _Thickness: 0.3
     m_Colors:
     - _Color: {r: 1, g: 0.808957, b: 0, a: 1}
-    - _DefaultScale: {r: 1, g: 1, b: 0, a: 0}
-    - _Size: {r: 1, g: 1, b: 0, a: 0}
+    - _DefaultScale: {r: 10, g: 10, b: 0, a: 0}
+    - _Size: {r: 0.1, g: 0.1, b: 0, a: 0}
+    - _Tiling: {r: 10, g: 10, b: 0, a: 0}
+    - _Vector3: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

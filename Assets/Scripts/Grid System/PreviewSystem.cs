@@ -8,6 +8,7 @@ public class PreviewSystem : MonoBehaviour
 {
     [SerializeField] private float previewYOffset = 0.06f;
 
+    [SerializeField] private GameObject joystickUI;
     [SerializeField] private GameObject cellIndicator;
     private GameObject previewObject;
 
@@ -29,13 +30,15 @@ public class PreviewSystem : MonoBehaviour
         PreparePreview(previewObject);
         PrepareCursor(size);
         cellIndicator.SetActive(true);
+        joystickUI.SetActive(false);
+        //todo close UI
     }
 
     private void PrepareCursor(Vector2Int size)
     {
         if (size is { x: <= 0, y: <= 0 }) return;
         
-        cellIndicator.transform.localScale = new Vector3(size.x, 2, size.y);
+        cellIndicator.transform.localScale = new Vector3(size.x, size.y, size.y);
         cellIndicatorRenderer.material.mainTextureScale = size;
     }
 
@@ -57,6 +60,7 @@ public class PreviewSystem : MonoBehaviour
     public void StopShowingPreview()
     {
         cellIndicator.SetActive(false);
+        joystickUI.SetActive(true);
         Destroy(previewObject);
     }
 

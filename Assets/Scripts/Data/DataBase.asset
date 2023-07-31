@@ -20,7 +20,7 @@ MonoBehaviour:
       type: 3}
   - <Name>k__BackingField: Table
     <ID>k__BackingField: 1
-    <Size>k__BackingField: {x: 3, y: 1}
+    <Size>k__BackingField: {x: 4, y: 4}
     <Prefab>k__BackingField: {fileID: 2712315722739376816, guid: 0b446f0f644e44c4ab62b7ee45fcf25f,
       type: 3}
   - <Name>k__BackingField: Sell Area

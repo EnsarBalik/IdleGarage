@@ -25,7 +25,6 @@ public class GridXZ : MonoBehaviour
 
     public bool IsPointerOverUI() => EventSystem.current.IsPointerOverGameObject();
 
-
     public Vector3 GetSelectedMapPosition()
     {
         Vector3 mousePos = Input.mousePosition;

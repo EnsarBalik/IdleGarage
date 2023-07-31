@@ -32531,6 +32531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previewYOffset: 0.06
+  joystickUI: {fileID: 1214411757}
   cellIndicator: {fileID: 1520615738}
   previewMaterialPrefab: {fileID: 2100000, guid: e2df46cc2d694d54f911e1831043e63c,
     type: 2}
@@ -45657,6 +45658,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 459228, guid: f2ed383c4eaf7fd4eb19ed7ee4347e0a,
     type: 3}
   m_PrefabInstance: {fileID: 1213739051}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1214411757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8135886326569738825, guid: 56fae09712773584fb63896d473a98ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 2086854318}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1214895103
 PrefabInstance:
@@ -80139,7 +80146,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2086854318}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1214411757}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba0d0e7a039f526499c356a3c5cd6d3f, type: 3}

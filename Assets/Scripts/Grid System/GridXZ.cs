@@ -13,6 +13,8 @@ public class GridXZ : MonoBehaviour
 
     [SerializeField] private LayerMask placementLayerMask;
 
+    public GameObject player;
+
     public event Action OnClicked, OnExit;
 
     private void Update()
@@ -27,9 +29,10 @@ public class GridXZ : MonoBehaviour
 
     public Vector3 GetSelectedMapPosition()
     {
-        Vector3 mousePos = Input.mousePosition;
+        var mousePos = player.transform.position;
         mousePos.z = sceneCam.nearClipPlane;
-        Ray ray = sceneCam.ScreenPointToRay(mousePos);
+        Vector3 test = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
+        Ray ray = sceneCam.ScreenPointToRay(test);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100, placementLayerMask))
         {

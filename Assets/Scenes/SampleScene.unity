@@ -84375,7 +84375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5866666020867394545}
   joystick: {fileID: 2086854320}
-  moveSpeed: 10
+  moveSpeed: 12
   playerAnimator: {fileID: 5866666020867394543}
   baseballBat: {fileID: 122804436}
   playPauseSmoke: 0

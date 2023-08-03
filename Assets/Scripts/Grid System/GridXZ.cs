@@ -12,30 +12,47 @@ public class GridXZ : MonoBehaviour
     private Vector3 lastPosition;
 
     [SerializeField] private LayerMask placementLayerMask;
+    [SerializeField] private PlacementSystem _placementSystem;
+
+    public GameObject player;
 
     public event Action OnClicked, OnExit;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-            OnClicked?.Invoke();
-        if (Input.GetKeyDown(KeyCode.A))
-            OnExit?.Invoke();
+        // if (Input.GetMouseButtonDown(0))
+        //     OnClicked?.Invoke();
+        // if (Input.GetKeyDown(KeyCode.A))
+        //     OnExit?.Invoke();
     }
 
     public bool IsPointerOverUI() => EventSystem.current.IsPointerOverGameObject();
 
     public Vector3 GetSelectedMapPosition()
     {
-        Vector3 mousePos = Input.mousePosition;
+        var mousePos = player.transform.position;
         mousePos.z = sceneCam.nearClipPlane;
-        Ray ray = sceneCam.ScreenPointToRay(mousePos);
+        Vector3 playerPos = new Vector3(player.transform.position.x, player.transform.position.y,
+            player.transform.position.z + 4);
+        Ray ray = sceneCam.ScreenPointToRay(playerPos);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100, placementLayerMask))
         {
-            lastPosition = hit.point;
+            lastPosition = playerPos;
         }
 
         return lastPosition;
+    }
+
+    public void PlacementStart()
+    {
+        _placementSystem.StartPlacement(0);
+        PlayerMove.instance.playerAnimator.SetBool("Build", true);
+    }
+
+    public void PlacementStop()
+    {
+        _placementSystem.StopPlacement();
+        PlayerMove.instance.playerAnimator.SetBool("Build", false);
     }
 }

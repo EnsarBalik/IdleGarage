@@ -21,7 +21,7 @@ public class PreviewSystem : MonoBehaviour
     {
         previewMaterialInstance = new Material(previewMaterialPrefab);
         cellIndicator.SetActive(false);
-        cellIndicatorRenderer = cellIndicator.GetComponentInChildren<Renderer>();
+        cellIndicatorRenderer = cellIndicator.transform.GetChild(0).transform.GetComponent<Renderer>();
     }
 
     public void StartShowingPlacementPreview(GameObject prefab, Vector2Int size)
@@ -30,7 +30,6 @@ public class PreviewSystem : MonoBehaviour
         PreparePreview(previewObject);
         PrepareCursor(size);
         cellIndicator.SetActive(true);
-        joystickUI.SetActive(false);
         //todo close UI
     }
 
@@ -38,7 +37,7 @@ public class PreviewSystem : MonoBehaviour
     {
         if (size is { x: <= 0, y: <= 0 }) return;
         
-        cellIndicator.transform.localScale = new Vector3(size.x, size.y, size.y);
+        cellIndicator.transform.GetChild(0).transform.localScale = new Vector3(size.x, size.y, size.y);
         cellIndicatorRenderer.material.mainTextureScale = size;
     }
 

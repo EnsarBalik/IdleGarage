@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2193530254454662496}
   m_Layer: 0
   m_Name: Collectable objects
-  m_TagString: Untagged
+  m_TagString: CollectArea1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
   BuySalesArea: {fileID: 8398256605019789359}
   costumerManager: {fileID: 0}
   place: {fileID: 2193530255128609561}
-  standHere: {fileID: 0}
+  standHere: {fileID: 6965000480129309829}
   occupied: 0
 --- !u!1 &2193530255128609562
 GameObject:

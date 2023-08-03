@@ -63,7 +63,7 @@ public class PlacementSystem : MonoBehaviour
     //     return selectedData.CanPlaceObjectAt(gridPos, database.ObjectDatas[selectedObjectIndex].Size);
     // }
 
-    private void StopPlacement()
+    public void StopPlacement()
     {
         //if (buildingState == null) return;
         gridVisualization.SetActive(false);

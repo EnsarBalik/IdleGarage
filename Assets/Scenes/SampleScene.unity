@@ -84423,7 +84423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valuableList:
   - {fileID: 769901734}
-  value: 0
+  value: 10
 --- !u!114 &5866666020867394548
 MonoBehaviour:
   m_ObjectHideFlags: 0

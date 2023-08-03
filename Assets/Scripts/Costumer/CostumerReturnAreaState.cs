@@ -16,9 +16,6 @@ public class CostumerReturnAreaState : CostumerBaseState
 
     public override void TriggerEnter(CostumerStateManager costumer, Collider collision)
     {
-        if (collision.gameObject.CompareTag("Costumer Area"))
-        {
-            costumer.gameObject.SetActive(false);
-        }
+        
     }
 }

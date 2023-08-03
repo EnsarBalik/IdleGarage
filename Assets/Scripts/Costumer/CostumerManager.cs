@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,31 +7,21 @@ public class CostumerManager : MonoBehaviour
 {
     public List<CostumerStateManager> costumerList;
 
-
-    private void Start()
-    {
-        for (int i = 0; i < costumerList.Count; i++)
-        {
-            costumerList[i].gameObject.SetActive(false);
-        }
-    }
-
-    public void FindSaleArea(SalesAreaController areaController, Transform standHere)
+    public void Test(SalesAreaController sac, Transform standHere)
     {
         CostumerStateManager costumer = default;
         
-        foreach (var t in costumerList.Where(t => !t.isOccupied))
+        foreach (var t in costumerList.Where(t => t.gameObject.activeInHierarchy && !t.isOccupied))
         {
             costumer = t;
             break;
         }
 
-        if (costumer != null)
+        if (costumer != null && costumer.gameObject.activeSelf)
         {
-            costumer.taskLocations = areaController;
+            costumer.taskLocations = sac;
             costumer.movePositionTransform = standHere;
             costumer.isOccupied = true;
-            costumer.gameObject.SetActive(true);
         }
     }
 }

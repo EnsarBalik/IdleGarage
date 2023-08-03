@@ -13,8 +13,8 @@ public class SalesAreaController : MonoBehaviour
     public static SalesAreaController instance;
 
     public BuySalesArea BuySalesArea;
-    public GameObject costumerManager;
-
+    public CostumerManager costumerManager; 
+    
     public Transform place;
     public Transform standHere;
 
@@ -27,7 +27,6 @@ public class SalesAreaController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        costumerManager = GameObject.Find("/Costumer Manager");
         var valuableList = ValueController.instance.valuableList;
         if (valuableList.Count > 1 && !occupied && BuySalesArea.isSold)
         {
@@ -42,7 +41,8 @@ public class SalesAreaController : MonoBehaviour
             randomProduct.SetActive(true);
             valuableList.Remove(valuableList[^1]);
             occupied = true;
-            costumerManager.GetComponent<CostumerManager>().FindSaleArea(this, standHere);
+            //CostumerStateManager.instance.FindProduct(this, standHere);
+            costumerManager.Test(this,standHere);
         }
     }
 }

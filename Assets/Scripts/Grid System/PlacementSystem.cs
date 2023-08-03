@@ -13,13 +13,12 @@ public class PlacementSystem : MonoBehaviour
 
     [SerializeField] private ObjectsDatabaseSO database;
     [SerializeField] private GameObject gridVisualization;
-    public GameObject player;
 
     private GridData floorData, furnitureData;
 
     [SerializeField] private PreviewSystem preview;
 
-    private Vector3 lastDetectedPosition;
+    private Vector3Int lastDetectedPosition = Vector3Int.zero;
 
     [SerializeField] private ObjectPlacer _objectPlacer;
 
@@ -63,14 +62,14 @@ public class PlacementSystem : MonoBehaviour
     //     return selectedData.CanPlaceObjectAt(gridPos, database.ObjectDatas[selectedObjectIndex].Size);
     // }
 
-    public void StopPlacement()
+    private void StopPlacement()
     {
         //if (buildingState == null) return;
         gridVisualization.SetActive(false);
         preview.StopShowingPreview();
         inputManager.OnClicked -= PlaceStructure;
         inputManager.OnExit -= StopPlacement;
-        lastDetectedPosition = player.transform.position;
+        lastDetectedPosition = Vector3Int.zero;
         buildingState = null;
     }
 

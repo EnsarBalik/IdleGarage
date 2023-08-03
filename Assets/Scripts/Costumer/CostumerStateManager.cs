@@ -59,10 +59,8 @@ public class CostumerStateManager : MonoBehaviour
 
         if (other.gameObject.CompareTag("Costumer Area"))
         {
-            CurrentState.TriggerEnter(this, other);
-            isOccupied = false;
-            ThiefEscaped();
             SwitchState(MoveTaskPosState);
+            ThiefEscaped();
         }
 
         if (other.gameObject.CompareTag("Player") && thief)
@@ -117,7 +115,6 @@ public class CostumerStateManager : MonoBehaviour
         _navMeshAgent.destination = costumerArea.position;
         isWalkDone = false;
         animatorController.SetBool("Walking", true);
-        animatorController.SetBool("Think", false);
     }
 
     public void SwitchState(CostumerBaseState state)

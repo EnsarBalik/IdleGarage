@@ -11,7 +11,6 @@ public class CostumerTaskDoneState : CostumerBaseState
         if (costumer.isWalkDone)
         {
             costumer.animatorController.SetBool("Walking", false);
-            costumer.animatorController.SetBool("Think", true);
         }
     }
 
@@ -22,7 +21,6 @@ public class CostumerTaskDoneState : CostumerBaseState
 
     public override void TriggerEnter(CostumerStateManager costumer, Collider collision)
     {
-        if (collision.CompareTag("Costumer Area"))
-            costumer.isOccupied = false;
+        
     }
 }

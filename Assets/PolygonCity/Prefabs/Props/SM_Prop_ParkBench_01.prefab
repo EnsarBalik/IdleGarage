@@ -11,10 +11,6 @@ GameObject:
   - component: {fileID: 421550}
   - component: {fileID: 3309938}
   - component: {fileID: 2393092}
-  - component: {fileID: 64169574747698980}
-  - component: {fileID: 64209023364631870}
-  - component: {fileID: 64862029186280288}
-  - component: {fileID: 64774972087389572}
   m_Layer: 0
   m_Name: SM_Prop_ParkBench_01
   m_TagString: Untagged
@@ -87,59 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64169574747698980
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164744}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43490502554591804, guid: 32a3dde88e5aabe46a12bd13eae06e00, type: 2}
---- !u!64 &64209023364631870
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164744}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43713025677735292, guid: 32a3dde88e5aabe46a12bd13eae06e00, type: 2}
---- !u!64 &64862029186280288
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164744}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43965888871007316, guid: 32a3dde88e5aabe46a12bd13eae06e00, type: 2}
---- !u!64 &64774972087389572
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164744}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43365695347703754, guid: 32a3dde88e5aabe46a12bd13eae06e00, type: 2}

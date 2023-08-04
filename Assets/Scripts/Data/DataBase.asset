@@ -20,11 +20,11 @@ MonoBehaviour:
       type: 3}
   - <Name>k__BackingField: Table
     <ID>k__BackingField: 1
-    <Size>k__BackingField: {x: 4, y: 4}
+    <Size>k__BackingField: {x: 5, y: 5}
     <Prefab>k__BackingField: {fileID: 2712315722739376816, guid: 0b446f0f644e44c4ab62b7ee45fcf25f,
       type: 3}
   - <Name>k__BackingField: Sell Area
     <ID>k__BackingField: 2
-    <Size>k__BackingField: {x: 4, y: 4}
+    <Size>k__BackingField: {x: 5, y: 5}
     <Prefab>k__BackingField: {fileID: 2193530256208268994, guid: efee6fc98b3bfc54a803ec926d042e50,
       type: 3}

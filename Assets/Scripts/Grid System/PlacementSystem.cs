@@ -13,6 +13,7 @@ public class PlacementSystem : MonoBehaviour
 
     [SerializeField] private ObjectsDatabaseSO database;
     [SerializeField] private GameObject gridVisualization;
+    [SerializeField] private GameObject buildPanel;
     public GameObject player;
 
     private GridData floorData, furnitureData;
@@ -41,15 +42,11 @@ public class PlacementSystem : MonoBehaviour
 
         inputManager.OnClicked += PlaceStructure;
         inputManager.OnExit += StopPlacement;
+        buildPanel.SetActive(true);
     }
 
-    private void PlaceStructure()
+    public void PlaceStructure()
     {
-        if (inputManager.IsPointerOverUI())
-        {
-            return;
-        }
-
         Vector3 mousePos = inputManager.GetSelectedMapPosition();
         Vector3Int gridPos = grid.WorldToCell(mousePos);
 
@@ -70,6 +67,7 @@ public class PlacementSystem : MonoBehaviour
         preview.StopShowingPreview();
         inputManager.OnClicked -= PlaceStructure;
         inputManager.OnExit -= StopPlacement;
+        buildPanel.SetActive(false);
         lastDetectedPosition = player.transform.position;
         buildingState = null;
     }

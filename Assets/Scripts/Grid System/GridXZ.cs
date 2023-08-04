@@ -13,7 +13,7 @@ public class GridXZ : MonoBehaviour
 
     [SerializeField] private LayerMask placementLayerMask;
     [SerializeField] private PlacementSystem _placementSystem;
-
+    
     public GameObject player;
 
     public event Action OnClicked, OnExit;
@@ -55,4 +55,21 @@ public class GridXZ : MonoBehaviour
         _placementSystem.StopPlacement();
         PlayerMove.instance.playerAnimator.SetBool("Build", false);
     }
+    
+    int queue;
+    public void StartStopPlacement()
+    {
+            
+        if (queue == 0)
+        {
+            PlacementStart();
+            queue = 1;
+        }
+        else if (queue == 1)
+        {
+            PlacementStop();
+            queue = 0;
+        }
+    }
+    
 }

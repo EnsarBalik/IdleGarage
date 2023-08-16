@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using Hypertonic.GridPlacement;
+using Hypertonic.GridPlacement.Example.MoveGridDemo;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +14,11 @@ public class GameManager : MonoBehaviour
 
     public int coin;
     [SerializeField] private TextMeshProUGUI coinText;
+    public GameObject joystick;
+    public CinemachineVirtualCamera mainCam;
+    public CinemachineVirtualCamera buildingCam;
+    public GridSettings _gridSettings;
+    public GridSaveManager GridSave;
 
     private void Start()
     {
@@ -62,5 +70,30 @@ public class GameManager : MonoBehaviour
             coinText.text = amount.ToString();
             yield return null;
         }
+    }
+
+    public void StartStopPlacement()
+    {
+        joystick.SetActive(false);
+        buildingCam.gameObject.SetActive(true);
+        mainCam.gameObject.SetActive(false);
+    }
+
+    public void StopPlacement()
+    {
+        joystick.SetActive(true);
+        buildingCam.gameObject.SetActive(false);
+        mainCam.gameObject.SetActive(true);
+    }
+
+    public void FindProductForCam()
+    {
+        StartCoroutine(FindObject());
+    }
+
+    private IEnumerator FindObject()
+    {
+        yield return new WaitForSeconds(0.1f);
+        buildingCam.Follow = GameObject.Find("Object Placement Container").transform;
     }
 }

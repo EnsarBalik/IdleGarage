@@ -8,7 +8,7 @@ namespace Hypertonic.GridPlacement.Example.BasicDemo
     {
         public static event System.Action OnSaveGridObjectsEvent;
 
-        private void Start()
+        public void Start()
         {
             GetComponent<Button>().onClick.AddListener(() => OnSaveGridObjectsEvent?.Invoke());
         }

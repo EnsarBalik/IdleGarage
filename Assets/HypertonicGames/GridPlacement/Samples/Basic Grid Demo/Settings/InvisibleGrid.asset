@@ -29,54 +29,71 @@ MonoBehaviour:
   HidePlacementCellsIfOutsideOfGrid: 1
   ShowOccupiedCells: 1
   GridCanvasEventCameraName: 
-  ChangeObjectMaterials: 1
-  ObjectPlaceableMaterial: {fileID: 2100000, guid: 7fb8be3249023ba41932317f6da47b0d, type: 2}
-  ObjectUnPlaceableMaterial: {fileID: 2100000, guid: 447137d51a391c74fa67e1a5883f0520, type: 2}
+  UsePlaceableMaterial: 1
+  UseUnplaceableMaterial: 1
+  ObjectPlaceableMaterial: {fileID: 2100000, guid: 7fb8be3249023ba41932317f6da47b0d,
+    type: 2}
+  ObjectUnPlaceableMaterial: {fileID: 2100000, guid: 447137d51a391c74fa67e1a5883f0520,
+    type: 2}
   DefaultAlignment: 0
   InitialPlacementCellIndex: {x: 5, y: 5}
   PlatformGridInputsDefinitionMappings:
   - Name: Android
     RuntimePlatform: 11
-    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49, type: 2}
+    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49,
+      type: 2}
   - Name: IPhonePlayer
     RuntimePlatform: 8
-    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49, type: 2}
+    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49,
+      type: 2}
   - Name: LinuxEditor
     RuntimePlatform: 16
-    GridInputDefinition: {fileID: 11400000, guid: 8e5cbd7326c77ea43923f536d968965a, type: 2}
+    GridInputDefinition: {fileID: 11400000, guid: 8e5cbd7326c77ea43923f536d968965a,
+      type: 2}
   - Name: LinuxPlayer
     RuntimePlatform: 13
-    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49, type: 2}
+    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49,
+      type: 2}
   - Name: OSXEditor
     RuntimePlatform: 0
-    GridInputDefinition: {fileID: 11400000, guid: 8e5cbd7326c77ea43923f536d968965a, type: 2}
+    GridInputDefinition: {fileID: 11400000, guid: 8e5cbd7326c77ea43923f536d968965a,
+      type: 2}
   - Name: OSXPlayer
     RuntimePlatform: 1
-    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49, type: 2}
+    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49,
+      type: 2}
   - Name: PS4
     RuntimePlatform: 25
-    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49, type: 2}
+    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49,
+      type: 2}
   - Name: PS5
     RuntimePlatform: 38
-    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49, type: 2}
+    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49,
+      type: 2}
   - Name: Stadia
     RuntimePlatform: 34
-    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49, type: 2}
+    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49,
+      type: 2}
   - Name: Switch
     RuntimePlatform: 32
-    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49, type: 2}
+    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49,
+      type: 2}
   - Name: tvOS
     RuntimePlatform: 31
-    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49, type: 2}
+    GridInputDefinition: {fileID: 11400000, guid: 70fcce22272cff34b9805a0242ff3b49,
+      type: 2}
   - Name: WindowsEditor
     RuntimePlatform: 7
-    GridInputDefinition: {fileID: 11400000, guid: 8e5cbd7326c77ea43923f536d968965a, type: 2}
+    GridInputDefinition: {fileID: 11400000, guid: 8e5cbd7326c77ea43923f536d968965a,
+      type: 2}
   - Name: WindowsPlayer
     RuntimePlatform: 2
-    GridInputDefinition: {fileID: 11400000, guid: 8e5cbd7326c77ea43923f536d968965a, type: 2}
+    GridInputDefinition: {fileID: 11400000, guid: 8e5cbd7326c77ea43923f536d968965a,
+      type: 2}
   - Name: XboxOne
     RuntimePlatform: 27
-    GridInputDefinition: {fileID: 11400000, guid: 8e5cbd7326c77ea43923f536d968965a, type: 2}
+    GridInputDefinition: {fileID: 11400000, guid: 8e5cbd7326c77ea43923f536d968965a,
+      type: 2}
   - Name: GameCoreXboxOne
     RuntimePlatform: 37
     GridInputDefinition: {fileID: 0}

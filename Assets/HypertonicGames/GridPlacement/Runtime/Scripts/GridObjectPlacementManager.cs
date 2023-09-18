@@ -413,6 +413,7 @@ namespace Hypertonic.GridPlacement
         /// Places the object by setting up the grid object info component
         /// </summary>
         /// <param name="gridCellIndex">The should be the raw grid cell index of the position without the offset of the alignment applied. </param>
+        
         public void PlaceObject(Vector2Int gridCellIndex)
         {
             if (!ObjectToPlace.TryGetComponent(out GridObjectInfo gridObjectInfo))

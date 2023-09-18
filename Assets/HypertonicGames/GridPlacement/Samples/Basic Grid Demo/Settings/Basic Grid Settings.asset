@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Basic Grid Settings
   m_EditorClassIdentifier: 
   Key: Basic Grid Settings
-  Width: 53
-  Height: 53
-  GridSizeRatio: {x: 1, y: 1}
+  Width: 66
+  Height: 52.8
+  GridSizeRatio: {x: 5, y: 4}
   AmountOfCellsX: 50
-  AmountOfCellsY: 50
-  GridPosition: {x: 10.6, y: 0.51, z: 22.5}
+  AmountOfCellsY: 40
+  GridPosition: {x: 16.5, y: 0.51, z: 22.62}
   GridRotation: 0
   ParentToGrid: 1
   CellImage: {fileID: 21300000, guid: ffcc9c6045864204c90dbdb2482f3c0a, type: 3}

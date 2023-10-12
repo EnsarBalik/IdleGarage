@@ -14,7 +14,7 @@ public class ValueTrigger : MonoBehaviour
 
     private float cargoArricalTime;
     private bool cargoCoolDown = true;
-    private float cargoCoolDownSec = 3f;
+    private float cargoCoolDownSec = 8f;
     public TextMeshProUGUI cargoArriveTimeText;
 
     public List<GameObject> cargo;
@@ -33,12 +33,14 @@ public class ValueTrigger : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
+        var valueController = ValueController.instance;
         if (other.gameObject.CompareTag($"Player"))
         {
             if (transform.childCount <= 0) return;
             fillImage.gameObject.SetActive(true);
             if (!isCoolDown)
             {
+                if (valueController.valuableList.Count > valueController.carryCapacity) return;
                 ValueController.instance.StackObjet(transform.GetChild(transform.childCount - 1).gameObject,
                     ValueController.instance.valuableList.Count - 1);
                 cargo.Remove(transform.GetChild(transform.childCount - 1).gameObject);
@@ -118,5 +120,4 @@ public class ValueTrigger : MonoBehaviour
             }
         }
     }
-    
 }

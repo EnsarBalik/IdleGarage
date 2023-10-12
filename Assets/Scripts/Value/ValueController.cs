@@ -11,10 +11,13 @@ public class ValueController : MonoBehaviour
 
     public List<GameObject> valuableList;
     public int value;
-
+    public int carryCapacity;
+    public UpgradeSystem UpgradeSystem;
+    
     public void Start()
     {
         instance = this;
+        carryCapacity = PlayerPrefs.GetInt("capacityLevel", UpgradeSystem.capacityLvl);
     }
 
     public void StackObjet(GameObject other, int index)

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class CostumerStateManager : MonoBehaviour
@@ -43,6 +44,9 @@ public class CostumerStateManager : MonoBehaviour
 
         CurrentState = MoveTaskPosState;
         CurrentState.EnterState(this);
+
+        var costumer = CostumerManager.instance;
+        costumer.incomeRangeMin = PlayerPrefs.GetInt("incomeLevel", costumer.upgradeSystem.incomeLvl);
     }
 
     private void Update()
@@ -90,7 +94,8 @@ public class CostumerStateManager : MonoBehaviour
             int randomInt = Random.RandomRange(0, 2);
             if (randomInt == 1)
             {
-                GameManager.instance.CollectCoin(Random.Range(100, 200));
+                var costumer = CostumerManager.instance;
+                GameManager.instance.CollectCoin(Random.Range(costumer.incomeRangeMin, costumer.incomeRangeMin + 100));
             }
             else
             {

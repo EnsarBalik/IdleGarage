@@ -6,11 +6,16 @@ using UnityEngine;
 
 public class CostumerManager : MonoBehaviour
 {
+    public static CostumerManager instance;
+    
     public List<CostumerStateManager> costumerList;
-
-
+    
+    [SerializeField] public int incomeRangeMin;
+    [SerializeField] public UpgradeSystem upgradeSystem;
     private void Start()
     {
+        instance = this;
+        
         for (int i = 0; i < costumerList.Count; i++)
         {
             costumerList[i].gameObject.SetActive(false);

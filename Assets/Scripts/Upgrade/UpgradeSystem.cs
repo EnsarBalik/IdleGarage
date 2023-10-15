@@ -48,6 +48,15 @@ public class UpgradeSystem : MonoBehaviour
     public void IncreaseSpeed()
     {
         if (GameManager.instance.coin <= speedPrice) return;
+
+        taskmanager tasker = taskmanager.taskmanagersc;
+
+        if (PlayerPrefs.GetInt("gorev2") == 1)
+        {
+            PlayerPrefs.SetInt("gorev2", 2);
+            tasker.updatetaskselector();
+        }
+
         if (speedLvl < 15)
         {
             PlayerMove.instance.moveSpeed += 0.5f;
@@ -68,6 +77,15 @@ public class UpgradeSystem : MonoBehaviour
     public void IncreaseIncome()
     {
         if (GameManager.instance.coin <= incomePrice) return;
+
+        taskmanager tasker = taskmanager.taskmanagersc;
+
+        if (PlayerPrefs.GetInt("gorev2") == 1)
+        {
+            PlayerPrefs.SetInt("gorev2", 2);
+            tasker.updatetaskselector();
+        }
+
         if (incomeLvl < 15)
         {
             CostumerManager.instance.incomeRangeMin += 100;
@@ -88,6 +106,15 @@ public class UpgradeSystem : MonoBehaviour
     public void IncreaseCapacity()
     {
         if (GameManager.instance.coin <= capacityPrice) return;
+
+        taskmanager tasker = taskmanager.taskmanagersc;
+
+        if (PlayerPrefs.GetInt("gorev2") == 1)
+        {
+            PlayerPrefs.SetInt("gorev2", 2);
+            tasker.updatetaskselector();
+        }
+
         if (capacityLvl < 15)
         {
             ValueController.instance.carryCapacity++;

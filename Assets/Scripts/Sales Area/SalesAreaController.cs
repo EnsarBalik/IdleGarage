@@ -31,6 +31,13 @@ public class SalesAreaController : MonoBehaviour
         var valuableList = ValueController.instance.valuableList;
         if (valuableList.Count > 1 && !occupied && BuySalesArea.isSold)
         {
+            if (PlayerPrefs.GetInt("gorev") < 1f)
+            {
+                PlayerPrefs.SetInt("gorev", 1);
+                PlayerPrefs.SetInt("gorev2", 1);
+                taskmanager.taskmanagersc.updatetaskselector();
+            }
+
             valuableList[^1].transform.DOJump(place.position, 0.5f, 0, 0.5f);
             valuableList[^1].transform.parent = transform;
             valuableList[^1].transform.rotation = quaternion.identity;
